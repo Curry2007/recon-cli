@@ -12,13 +12,20 @@ python recon.py https://example.com
 ```
 
 > Windows 用 `.venv\Scripts\activate`；Linux / macOS 用 `source .venv/bin/activate`。
+## 高级用法
+
+```
+python recon.py https://example.com --timeout 3    # 自定义超时（秒）
+python recon.py https://example.com --json         # 输出 JSON，便于脚本处理
+```
 
 ## 它做什么
 
 - 发起 HTTP/HTTPS 请求，输出状态码、页面标题、Server 头
 - 输出 TLS 证书到期时间与剩余天数
 - 打印请求耗时与响应体大小
-
+- 打印请求耗时与响应体大小
+- 支持 `--json` 输出结构化数据，便于脚本串联
 ## 结果
 
 ```
@@ -38,7 +45,7 @@ Server   : cloudflare
 - 只支持单个 URL，不做批量、不做子域爆破
 - 单线程逐个请求，没有并发
 - 不解析 robots.txt、sitemap，不做指纹库匹配
-- 下一步：并发 + 指纹识别 + JSON 报告输出
+- 下一步：并发 + 指纹识别 + 批量扫描
 
 ## License
 

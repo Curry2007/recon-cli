@@ -27,7 +27,7 @@ def get_cert_expiry(host: str, port: int = 443):
 
 
 def fetch(url: str, timeout: int = TIMEOUT, allow_redirects: bool = True):
-    print(f"[debug] timeout = {timeout}")        # ← 临时加这行
+    
     return requests.get(url, timeout=timeout, allow_redirects=allow_redirects)
 
 
